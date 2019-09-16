@@ -18,8 +18,8 @@ class Post(models.Model):
     title = models.CharField(max_length=40, verbose_name="Название компании")
     slug = models.SlugField(max_length=30, verbose_name="URL")
     description = models.TextField(max_length=400, verbose_name="Описание компании")
-    image = models.ImageField(upload_to='images/posts_images', blank=True, null=True, verbose_name="Логотип компании")
-    comment = models.ForeignKey(Comments, on_delete=models.CASCADE, blank= True, null=True, verbose_name="Отзывы о компании")
+    image = models.ImageField(upload_to='images/posts_images', blank=True, null=True, verbose_name="Изображение")
+    comment = models.ForeignKey(Comments, on_delete=models.CASCADE, blank= True, null=True, verbose_name="Комментарий")
     date_pub = models.DateTimeField(verbose_name="Дата публикации")
 
     def __str__(self):
